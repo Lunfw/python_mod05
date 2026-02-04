@@ -54,10 +54,10 @@ class NumericProcessor(DataProcessor):
             output = f'Processed {len(data)} numeric values, '
             output += f'sum={sum(data)}, '
             output += f'avg={sum(data) / len(data)}\n'
-            return super().format_output(output)
+            print(output)
         except (ZeroDivisionError, TypeError):
             output = '[ALERT] One non_digit detected\n'
-            print(super().format_output(output), file=stderr)
+            print(output)
         return (output)
 
 
